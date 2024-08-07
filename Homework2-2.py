@@ -5,7 +5,7 @@ print('1.', response_any.text)
 
 params = {"method": "head"}
 response_head = requests.head("https://playground.learnqa.ru/ajax/api/compare_query_type", params = params)
-print('2.', response_head.headers)
+print('2.', response_head.status_code)
 
 params1 = {"method": "GET"}
 response_get = requests.get("https://playground.learnqa.ru/ajax/api/compare_query_type", params = params1)
