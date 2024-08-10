@@ -12,7 +12,7 @@ print("1.","Token = " , token, "Seconds = ", seconds)
 get_before = requests.get("https://playground.learnqa.ru/ajax/api/longtime_job",  params = {"token":token})
 get_before_json = get_before.json()
 status = get_before_json['status']
-if status := "Job is NOT ready":
+if 'status' == "Job is NOT ready":
     print("2.", "Значение поля status верное")
 else:
     print("2.", "Значение поля status неверное")
