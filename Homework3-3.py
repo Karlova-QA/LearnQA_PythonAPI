@@ -17,7 +17,7 @@ class TestHeaders:
 
         expected_headers = {'Date': date, 'Content-Type': 'application/json', 'Content-Length': '15', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=10', 'Server': 'Apache', 'x-secret-homework-header': 'Some secret value', 'Cache-Control': 'max-age=0', 'Expires': date}
 
-        assert expected_headers == headers
+        assert expected_headers == headers, "Headers are missing or not as expected"
 
 
 
