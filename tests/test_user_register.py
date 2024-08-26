@@ -21,8 +21,8 @@ class TestUserRegister(BaseCase):
 
         response = requests.post("https://playground.learnqa.ru/api/user", data = data)
 
-        assert response.status_code == 200, f"Unexpected status code {response.status_code}"
-        print(response.content)
+        Assertions.assert_code_status(response, 200)
+        Assertions.assert_json_has_key(response, "id")
 
     def test_create_user_with_existing_email(self):
         email = 'vinkotov@example.com'
@@ -36,5 +36,6 @@ class TestUserRegister(BaseCase):
 
         response = requests.post("https://playground.learnqa.ru/api/user", data = data)
 
-        assert response.status_code == 400, f"Unexpected status code {response.status_code}"
+        Assertions.assert_code_status(response, 400)
+
         assert response.content.decode("utf-8") == f"Users with email {email} already exists", f"Unexpected response content {response.content}"
